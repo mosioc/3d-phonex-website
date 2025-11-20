@@ -16,6 +16,8 @@ export default function ModelPhonex(props) {
     "/models/samsung_galaxy_s22_ultra-transformed.glb"
   );
 
+  const texture = useTexture("/public/texture.png");
+
   return (
     <group {...props} dispose={null}>
       <mesh
@@ -37,7 +39,9 @@ export default function ModelPhonex(props) {
         geometry={nodes.Object_12.geometry}
         material={materials.Display_ActiveArea}
         rotation={[-Math.PI / 2, 0, 0]}
-      />
+      >
+        <meshBasicMaterial map={texture} />
+      </mesh>
       <mesh
         geometry={nodes.Object_13.geometry}
         material={materials.Flash}
