@@ -130,3 +130,7 @@ button:focus-visible {
     }
   }
 }
+
+#canvas {
+  @apply !w-full !h-[80vh] lg:!h-dvh relative z-40;
+}

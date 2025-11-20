@@ -1,6 +1,8 @@
 import React from "react";
 import usePhonex, { solarized } from "../store";
 import { clsx } from "clsx";
+import { Canvas } from "@react-three/fiber";
+import { Box } from "@react-three/drei/core/shapes";
 
 type Props = {
   title: string;
@@ -60,6 +62,14 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
           </div>
         </div>
       </div>
+
+      <Canvas
+        id="canvas"
+        camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100 }}
+      >
+        <Box />
+
+      </Canvas>
     </section>
   );
 };
