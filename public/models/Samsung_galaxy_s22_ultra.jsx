@@ -8,22 +8,53 @@ Source: https://sketchfab.com/3d-models/samsung-galaxy-s22-ultra-a95eec5181a24bc
 Title: Samsung Galaxy S22 Ultra
 */
 
-import React from 'react'
-import { useGLTF } from '@react-three/drei'
+import React from "react";
+import { useGLTF } from "@react-three/drei";
 
 export default function Model(props) {
-  const { nodes, materials } = useGLTF('/samsung_galaxy_s22_ultra-transformed.glb')
+  const { nodes, materials } = useGLTF(
+    "/samsung_galaxy_s22_ultra-transformed.glb"
+  );
+
   return (
     <group {...props} dispose={null}>
-      <mesh geometry={nodes.Object_2.geometry} material={materials.PaletteMaterial001} rotation={[-Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_10.geometry} material={materials.PaletteMaterial002} rotation={[-Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_11.geometry} material={materials.Cam_lens} rotation={[-Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_12.geometry} material={materials.Display_ActiveArea} rotation={[-Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_13.geometry} material={materials.Flash} rotation={[-Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_23.geometry} material={materials.SpeakerMic} rotation={[-Math.PI / 2, 0, 0]} />
-      <mesh geometry={nodes.Object_26.geometry} material={materials.Zoom_Cam} rotation={[-Math.PI / 2, 0, 0]} />
+      <mesh
+        geometry={nodes.Object_2.geometry}
+        material={materials.PaletteMaterial001}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_10.geometry}
+        material={materials.PaletteMaterial002}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_11.geometry}
+        material={materials.Cam_lens}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_12.geometry}
+        material={materials.Display_ActiveArea}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_13.geometry}
+        material={materials.Flash}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_23.geometry}
+        material={materials.SpeakerMic}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
+      <mesh
+        geometry={nodes.Object_26.geometry}
+        material={materials.Zoom_Cam}
+        rotation={[-Math.PI / 2, 0, 0]}
+      />
     </group>
-  )
+  );
 }
 
-useGLTF.preload('/samsung_galaxy_s22_ultra-transformed.glb')
+useGLTF.preload("/samsung_galaxy_s22_ultra-transformed.glb");
