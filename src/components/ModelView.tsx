@@ -1,17 +1,38 @@
 import React from "react";
-import usePhonex, { solarized } from "../store";
+// import usePhonex from "../store";
+// import { clsx } from "clsx";
 
 type Props = {
   title: string;
 };
-
-export const ModelView: React.FC<Props> = ({ title }: Props) => {
-  const { color, scale, setColor, setScale } = usePhonex();
+const ModelView: React.FC<Props> = ({ title }: Props) => {
+  // const { color, scale, setColor, setScale } = usePhonex();
 
   return (
-    <div className="p-4 bg-gray-100 rounded">
-      <h1 className="text-xl font-bold">{title}</h1>
-      <p>test</p>
-    </div>
+    <section className="p-4 rounded">
+      <div className="">
+        <div className="flex-center gap-5 mt-5">
+          {/* color picker */}
+          <div className="flex gap-2">
+            <div />
+            <div />
+            {title}
+          </div>
+
+          {/* scale picker */}
+          <div className="flex gap-2">
+            <div>
+              <p>small </p>
+            </div>
+            <div>
+              <p>big </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
+
+
+export default ModelView;
