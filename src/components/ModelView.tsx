@@ -69,7 +69,6 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
       >
         <ambientLight intensity={0.5} />
         <ModelPhonex scale={0.3} position={[0, 0, 1]} />
-
       </Canvas>
     </section>
   );
