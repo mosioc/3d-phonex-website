@@ -3,6 +3,8 @@ import usePhonex, { solarized } from "../store";
 import { clsx } from "clsx";
 import { Canvas } from "@react-three/fiber";
 import ModelPhonex from "./models/Samsung_galaxy_s22_ultra.jsx";
+import { OrbitControls } from "@react-three/drei";
+import Lighter from "./Lighter";
 
 type Props = {
   title: string;
@@ -67,8 +69,11 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
         id="canvas"
         camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100 }}
       >
-        <ambientLight intensity={0.5} />
+        <Lighter /> 
+
         <ModelPhonex scale={0.3} position={[0, 0, 1]} />
+
+        <OrbitControls enableZoom={true} enablePan={true} />
       </Canvas>
     </section>
   );
