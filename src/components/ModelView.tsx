@@ -11,7 +11,7 @@ type Props = {
 };
 const ModelView: React.FC<Props> = ({ title }: Props) => {
   const { color, scale, setColor, setScale } = usePhonex();
-  
+
 
   return (
     <section className="p-4 rounded">
@@ -70,10 +70,10 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
         id="canvas"
         camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100 }}
       >
-        <Lighter /> 
+        <Lighter />
 
-        <ModelPhonex scale={scale} position={[0, 0, 1]} />
-
+        <ModelPhonex scale={scale} position={[0, 0, 1]} color={color} />
+        
         <OrbitControls enableZoom={true} enablePan={true} />
       </Canvas>
     </section>

@@ -33,6 +33,16 @@ export const solarized = {
   green: "#859900",
 };
 
+export const noChangeParts = [
+    "Object_2",
+    "Object_10",
+    "Object_11",
+    "Object_12",
+    "Object_13",
+    "Object_23",
+    "Object_26",
+  ];
+
 const DEFAULT_COLOR = solarized.base02; 
 const DEFAULT_SCALE = 0.08;
 const DEFAULT_TEXTURE = "/videos/texture-1.mp4";
