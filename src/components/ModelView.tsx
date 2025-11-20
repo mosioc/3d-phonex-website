@@ -2,7 +2,7 @@ import React from "react";
 import usePhonex, { solarized } from "../store";
 import { clsx } from "clsx";
 import { Canvas } from "@react-three/fiber";
-import ModelPhonex from "./models/Samsung_galaxy_s22_ultra.jsx";
+import ModelPhonex from "./models/Samsung_galaxy_s22_ultra";
 import { OrbitControls } from "@react-three/drei";
 import Lighter from "./Lighter";
 
@@ -41,26 +41,26 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
           {/* scale picker */}
           <div className="model-view-scale-picker flex gap-2">
             <div
-              onClick={() => setScale(0.06)}
+              onClick={() => setScale(0.2)}
               className={clsx(
                 "px-3 py-1 rounded cursor-pointer border",
-                scale === 0.06
+                scale === 0.2
                   ? "bg-white text-black"
                   : "bg-transparent text-white"
               )}
             >
-              <p>small </p>
+              <p>S</p>
             </div>
             <div
-              onClick={() => setScale(0.08)}
+              onClick={() => setScale(0.3)}
               className={clsx(
                 "px-3 py-1 rounded cursor-pointer border",
-                scale === 0.08
+                scale === 0.3
                   ? "bg-white text-black"
                   : "bg-transparent text-white"
               )}
             >
-              <p>big </p>
+              <p>M </p>
             </div>
           </div>
         </div>
@@ -72,7 +72,7 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
       >
         <Lighter /> 
 
-        <ModelPhonex scale={0.3} position={[0, 0, 1]} />
+        <ModelPhonex scale={scale} position={[0, 0, 1]} />
 
         <OrbitControls enableZoom={true} enablePan={true} />
       </Canvas>
