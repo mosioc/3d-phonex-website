@@ -1,5 +1,33 @@
 @import "tailwindcss";
 
+@utility flex-center {
+  @apply flex items-center justify-center;
+}
+
+@utility flex-between {
+  @apply flex items-center justify-between;
+}
+
+@utility col-center {
+  @apply flex flex-col items-center justify-center;
+}
+
+@utility abs-center {
+  @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+}
+
+@utility h3-semibold {
+  @apply font-semibold text-xl text-dark-100;
+}
+
+@utility base-semibold {
+  @apply font-semibold text-base text-dark-100;
+}
+
+@utility small-medium {
+  @apply font-medium text-xs;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
