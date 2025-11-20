@@ -10,6 +10,7 @@ Title: Samsung Galaxy S22 Ultra
 
 import React from "react";
 import { useGLTF, useTexture } from "@react-three/drei";
+import { SRGBColorSpace } from "three";
 
 export default function ModelPhonex(props) {
   const { nodes, materials } = useGLTF(
@@ -17,6 +18,8 @@ export default function ModelPhonex(props) {
   );
 
   const texture = useTexture("/public/texture.png");
+  texture.colorSpace = SRGBColorSpace;
+  texture.needsUpdate = true;
 
   return (
     <group {...props} dispose={null}>

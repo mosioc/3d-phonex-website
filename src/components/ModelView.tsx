@@ -11,6 +11,7 @@ type Props = {
 };
 const ModelView: React.FC<Props> = ({ title }: Props) => {
   const { color, scale, setColor, setScale } = usePhonex();
+  
 
   return (
     <section className="p-4 rounded">
