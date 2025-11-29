@@ -10,6 +10,7 @@
 - **State Management**: Zustand
 - **3D Rendering**: Three.js
 - **Styling**: Tailwind
+- **Class Name Utility**: clsx
 - **Linting**: ESLint
 
 ## Project Structure
