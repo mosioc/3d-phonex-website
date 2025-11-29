@@ -82,7 +82,7 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
         {/* hints - only show on desktop */}
         {isDesktop && (
           <div className="model-view-color-picker absolute top-4 right-4 bg-black/70 text-white text-xs px-3 py-2 rounded border border-white/10 pointer-events-none z-10">
-            <p>ctrl + scroll → zoom</p>
+            <p>scroll → zoom</p>
             <p>shift + drag → move anchor</p>
           </div>
         )}
