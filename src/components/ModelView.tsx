@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import usePhonex, { solarized } from "../store";
 import { clsx } from "clsx";
 import { Canvas } from "@react-three/fiber";
@@ -9,9 +9,23 @@ import Lighter from "./Lighter";
 type Props = {
   title: string;
 };
+
 const ModelView: React.FC<Props> = ({ title }: Props) => {
   const { color, scale, setColor, setScale } = usePhonex();
 
+  // detect if device is desktop (has mouse, not touch)
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkDesktop = () => {
+      const hasMouse = window.matchMedia("(pointer: fine)").matches;
+      const hasTouch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      setIsDesktop(hasMouse && !hasTouch);
+    };
+    checkDesktop();
+    window.addEventListener("resize", checkDesktop);
+    return () => window.removeEventListener("resize", checkDesktop);
+  }, []);
 
   return (
     <section className="p-4 rounded">
@@ -35,7 +49,7 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
               )}
               style={{ backgroundColor: solarized.base02 }}
             />
-            {title}
+            <h4 className="text-lime-50">{title}</h4>
           </div>
 
           {/* scale picker */}
@@ -64,6 +78,14 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
             </div>
           </div>
         </div>
+
+        {/* hints - only show on desktop */}
+        {isDesktop && (
+          <div className="model-view-color-picker absolute top-4 right-4 bg-black/70 text-white text-xs px-3 py-2 rounded border border-white/10 pointer-events-none z-10">
+            <p>ctrl + scroll → zoom</p>
+            <p>shift + drag → move anchor</p>
+          </div>
+        )}
       </div>
 
       <Canvas
@@ -71,9 +93,8 @@ const ModelView: React.FC<Props> = ({ title }: Props) => {
         camera={{ position: [0, 2, 5], fov: 50, near: 0.1, far: 100 }}
       >
         <Lighter />
-
         <ModelPhonex scale={scale} position={[0, 0, 1]} color={color} />
-        
+       
         <OrbitControls enableZoom={true} enablePan={true} />
       </Canvas>
     </section>
